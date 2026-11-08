@@ -1,0 +1,32 @@
+name: FIVERREX Electron Desktop CI/CD
+
+on:
+  push:
+    branches: [main, fiverrex, develop]
+  pull_request:
+    branches: [main, fiverrex]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: TypeScript Verification (Renderer + Electron Main/Preload)
+        run: npm run typecheck
+
+      - name: Build Production Bundle (Vite + Electron)
+        run: npm run build
+
+      - name: Run Unit & DDD Compliance Tests
+        run: npm test
