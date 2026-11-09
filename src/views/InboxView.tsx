@@ -527,3 +527,4 @@ export function InboxView() {
     </div>
   );
 }
+

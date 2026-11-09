@@ -308,3 +308,4 @@ export function formatEscrowReceiptMarkdown(receipt: EscrowReceiptPayload): stri
     .filter(Boolean)
     .join("\n");
 }
+

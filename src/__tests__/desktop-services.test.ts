@@ -114,3 +114,4 @@ describe("FIVERREX Electron Desktop Services & DDD Compliance", () => {
     expect(uiReview.comment).toContain("hexagonal");
   });
 });
+

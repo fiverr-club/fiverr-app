@@ -59,3 +59,4 @@ const desktopBridge: ElectronDesktopBridge = {
 };
 
 contextBridge.exposeInMainWorld("electronAPI", desktopBridge);
+

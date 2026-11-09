@@ -698,3 +698,4 @@ export function DesktopHeader({
     </header>
   );
 }
+
